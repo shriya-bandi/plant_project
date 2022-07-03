@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .body
+        {
+            background-image: linear-gradient(135deg, #FAB2FF 10%, #70F570 100%);
+        }
+        .row{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+        .head
+        {
+            text-align: center;
+
+        }
+        .filters
+        {
+            font-size: larger;
+            width: 12%;
+            overflow: auto;
+            float: left;
+            background-image: linear-gradient(135deg, #FAB2FF 10%, #70F570 100%);
+        }
+        .filt2 {
+            width: 80%;
+        }
+
+        .plpdts
+        {
+            float: left;
+            margin: 20px;
+            cursor: pointer;
+        }
+
+        .plpdts:hover{
+            scale: 110%;
+        }
+
+    </style>
+    <script>
+        function focusFunction(x) {
+
+    }
+
+    function blurFunction(y) {
+        y.style.background = "beige";
+    }
+    </script>
+</head>
+<body class="body">
+<div class="head">
+  <h1>PLANTS</h1>
+</div>
+<div CLASS="filters">
+    <form>
+    <p>filters</p>
+    <p>__________________</p>
+    <p>price</p>
+    <input type="number" placeholder="FROM">
+    <br><input type="number" placeholder="TO">
+    <p>__________________</p>
+    <p>COLORS</p>
+    <input type="color">
+    <p>__________________</p>
+    <p id="submit" onmouseover="focusFunction(document.getElementById('submit'))">SEOSAN</p>
+    <select name="seosan" onmouseup="style">
+        <option value="SUMMER">SUMMER</option>
+        <option value="WINTER">WINTER</option>
+        <option value="AUTUMN">AUTUMN</option>
+        <option value="SPRING">SPRING</option>
+        <option value="RAINY">RAINY</option>
+    </select>
+    <p>__________________</p>
+    <p>height</p>
+    <input type="number" placeholder="HEIGHT">
+    <p>__________________</p>
+    <p>Thickness or Width</p>
+    <input type="number" placeholder="WIDTH">
+        <p>__________________</p>
+        <input type="submit">
+    </form>
+</div>
+<div class="filters filt2">
+    <div class="row">
+        <div class="plpdts">
+        <img src="Screenshot 2022-06-07 at 3.31.24 PM.png">
+        </div>
+        <div class="plpdts" >
+            <img src="Screenshot 2022-06-07 at 3.32.35 PM.png">
+        </div>
+        <div class="plpdts">
+            <img src="Screenshot 2022-06-07 at 3.33.59 PM.png">
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="plpdts">
+        <img src="Screenshot 2022-06-07 at 3.35.12 PM.png">
+        </div>
+        <div class="plpdts">
+            <img src="Screenshot 2022-06-07 at 3.37.42 PM.png">
+        </div>
+        <div class="plpdts" >
+            <img src="Screenshot 2022-06-07 at 1.04.52 PM.png">
+        </div>
+    </div>
+
+</div>
+
+
+</div>
+</body>
+</html>

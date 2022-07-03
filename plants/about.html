@@ -1,0 +1,105 @@
+<html>
+<head>
+    <style>
+        body {
+            background-image: url("pexels-oleksandr-pidvalnyi-7717914.jpg");
+            background-size: cover;
+            font-size: 30px;
+            color: white;
+            text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px purple;
+        }
+    </style>
+<script>
+    var i = 1;
+
+    function add() {
+        i++;
+        var div = document.createElement('div');
+        var id = i;
+        div.innerHTML = 'prefernce_' + id + ': <input type="text" name="hobbie_' + id + '"/>' + ' <input type="button" id="add_button' + id + '" onclick="add()" value="add" />' + ' <input type="button" id="remove_button' + id + '" onclick="remove(this)" value="remove" />';
+        document.getElementById('hobbies').appendChild(div);
+    }
+
+    function remove(div) {
+        document.getElementById('hobbies').removeChild(div.parentNode);
+        i--;
+    }
+    function validate(mail) {
+        var x = /^[a-zA-Z]+\w*\W*@\w*\W*\.(com|co\.in|co\.uk)$/
+        if (mail.match(x)) {
+            alert("Valid Email.")
+        }
+        else { alert("Invalid Email") }
+
+    }
+    function validation(pwd) {
+        var y = /(^[a-zA-Z]+[0-9]+).{8,}$/
+        if (pwd.match(y)) {
+            alert("Valid Password.")
+        }
+        else { alert("Invalid Password") }
+
+    }
+    function focusFunction(x) {
+        x.style.background ="gray";
+    }
+
+    function blurFunction(y) {
+        y.style.background = "beige";
+    }
+</script>
+</head>
+<body>
+    <h1 style="background-color:black;text-align:center;">REGISTER PAGE</h1>
+    <form>
+        <center>
+            <label for=" username">username</label>
+            <input type="text" id="name" placeholder="enter username" onfocus="focusFunction(document.getElementById('name'))" onblur="blurFunction(document.getElementById('name'))" />
+            <br><br>
+            <label for=" password">password</label>
+            <input type="password" id="pwd" placeholder="enter password" onfocus="focusFunction(document.getElementById('pwd'))" onblur="blurFunction(document.getElementById('pwd'))" onchange="validation(document.getElementById('pwd').value)"/>
+            <br><br>
+            <label for="email">email</label>
+            <input type="email" id="mail" placeholder="enter your email" onfocus="focusFunction(document.getElementById('mail'))" onblur="blurFunction(document.getElementById('mail'))" onchange="validate(document.getElementById('mail').value)" />
+            <br><br>
+            <label for=" phonenumber">phone number</label>
+            <input type="number" id="phn" placeholder="enter phone number" onfocus="focusFunction(document.getElementById('phn'))" onblur="blurFunction(document.getElementById('phn'))" />
+            <br><br>
+            <p>gender</p>
+            <input type="radio" name="gender" value="female" />
+            <label for="female">female</label>
+            <br><br>
+            <input type="radio" name="gender" value="male" />
+            <label for="male">male</label>
+            <br><br>
+
+            <label for="age">age</label>
+            <input type="number" placeholder="enter your age" />
+            <br><br>
+            <label for="address">address</label>
+            <input type="text" placeholder="enter your address" />
+            <br><br>
+            <p>location</p>
+            <select name="location">
+                <option value="">--select--</option>
+                <option value="hyderabad">Hyderabad</option>
+                <option value="khammam">khammam</option>
+                <option value="mahabubnagar">mahabubnagar</option>
+            </select>
+
+            <br><br>
+            <p>preferences</p>
+            <div id="hobbies">
+                prefernce_1:
+                <input type="text" name="child_1">
+                <input type="button" id="add_button" onclick="add()" value="add" /><br><br>
+            </div>
+            <br><br>
+            <a href="mainpage.html"><button type="submit" class="primary " onclick="alert('details succesfully submited')">Submit</button></a>
+            <a href="plants.html">  <button type="submit" class="danger" onclick="alert('please try again!!')">cancel</button></a>
+
+            <p class="message">Already registered? <a href="index.html">Back to login</a></p>
+        </center>
+    </form>
+</body>
+</html>
